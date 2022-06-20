@@ -10,11 +10,13 @@
 
 <div class="md:ml-64 mt-16 md:mt-0 flex-shrink z-0 @SidebarClass">
     <div class="bg-slate-100 top-0 fixed w-full md:hidden h-16 flex items-center px-4 bg-slate-500 text-white text-lg">
-        <button @onclick="@(() => { sidebarExpanded = true; })" class="hamburger rounded-lg bg-slate-700 p-2 mr-4">
-            <div class="space-y-1 opacity-75">
-              <div class="line w-6 h-1 bg-white"></div>
-              <div class="line w-6 h-1 bg-white"></div>
-              <div class="line w-6 h-1 bg-white"></div>
+        <button title="Show navigation menu" @onclick="@(() => { sidebarExpanded = true; })" class="hamburger mr-2 p-3 -m-3">
+            <div class="handle rounded-lg bg-slate-700 p-2">
+                <div class="space-y-1 opacity-75">
+                  <div class="line w-6 h-1 bg-white"></div>
+                  <div class="line w-6 h-1 bg-white"></div>
+                  <div class="line w-6 h-1 bg-white"></div>
+                </div>
             </div>
         </button>
         QuickGrid Samples

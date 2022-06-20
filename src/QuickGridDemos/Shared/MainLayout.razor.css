@@ -19,7 +19,7 @@ nav {
     opacity: 0.4;
 }
 
-.hamburger:hover, .hamburger:active {
+.hamburger:hover .handle, .hamburger:active .handle {
     background-color: white;
 }
 

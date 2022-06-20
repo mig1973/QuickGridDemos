@@ -19,6 +19,9 @@ jobs:
         dotnet-version: '7.0.100-preview.5.22307.18'
         include-prerelease: true
 
+    - name: Install .NET WebAssembly workload for smaller build output
+      run: dotnet workload install wasm-tools --skip-manifest-update
+
     - name: Publish app
       run: cd ${{ env.CLIENT_APP_ROOT }} && dotnet publish -c Release
 

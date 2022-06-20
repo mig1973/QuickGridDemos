@@ -26,6 +26,7 @@
 
 	<Target Name="AcquireTailwindTooling" DependsOnTargets="GetTailwindToolingInputs" Condition="!Exists('$(TailwindExePath)')">
 		<DownloadFile SourceUrl="https://github.com/tailwindlabs/tailwindcss/releases/download/v$(TailwindToolsVersion)/$(TailwindExeName)" DestinationFolder="$(TailwindExeDir)" />
+		<Exec Condition="not($([MSBuild]::IsOSPlatform('Windows')))" Command="chmod +x '$(TailwindExePath)'" />
 	</Target>
 	
 	<Target Name="GetTailwindToolingInputs">

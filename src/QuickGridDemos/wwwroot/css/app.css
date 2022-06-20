@@ -46,3 +46,7 @@ h1:focus {
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
+
+#app {
+    display: flex;
+}

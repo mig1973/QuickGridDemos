@@ -1,17 +1,21 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar">
+<div class="@SidebarClass">
+    <div @onclick="@(() => { sidebarExpanded = false; })" class="overlay bg-black fixed top-0 bottom-0 left-0 right-0 z-10 opacity-50"></div>
+    <nav class="fixed flex flex-col h-screen bg-slate-700 text-white w-64 overflow-y-auto z-10 drop-shadow-2xl">
         <NavMenu />
-    </div>
-
-    <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
+    </nav>
 </div>
+
+<div class="md:ml-64 mt-12 md:mt-0 flex-shrink z-0 @SidebarClass">
+    <div class="bg-slate-100 top-0 fixed w-full md:hidden h-12">
+        Header
+        <button @onclick="@(() => { sidebarExpanded = true; })">Nav</button>
+    </div>
+    @Body
+</div>
+
+@code {
+    bool sidebarExpanded = false;
+    string SidebarClass => sidebarExpanded ? "sidebar-expanded" : string.Empty;
+}

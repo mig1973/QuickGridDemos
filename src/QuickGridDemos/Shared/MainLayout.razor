@@ -2,7 +2,7 @@
 @inject NavigationManager Nav
 
 <div class="@SidebarClass">
-    <div @onclick="@(() => { sidebarExpanded = false; })" class="overlay bg-black fixed top-0 bottom-0 left-0 right-0 z-10 opacity-50"></div>
+    <div @onclick="@(() => { sidebarExpanded = false; })" class="overlay bg-black fixed top-0 bottom-0 left-0 right-0 z-10"></div>
     <nav class="fixed flex flex-col h-screen bg-slate-700 text-white w-64 overflow-y-auto z-10 drop-shadow-2xl">
         <NavMenu />
     </nav>
@@ -21,6 +21,7 @@
         </button>
         QuickGrid Samples
     </div>
+
     @Body
 </div>
 

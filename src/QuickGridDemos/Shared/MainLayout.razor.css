@@ -7,7 +7,6 @@ nav {
 .overlay {
     display: none;
     opacity: 0;
-    transition: opacity 0.6s ease-in-out;
 }
 
 .sidebar-expanded nav {
@@ -16,7 +15,7 @@ nav {
 
 .sidebar-expanded .overlay {
     display: block;
-    opacity: 0.4;
+    opacity: 0.6;
 }
 
 .hamburger:hover .handle, .hamburger:active .handle {

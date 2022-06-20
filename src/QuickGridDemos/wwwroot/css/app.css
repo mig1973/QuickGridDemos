@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    font-family: Inter, sans-serif;
+}
+
 h1:focus {
     outline: none;
 }
@@ -59,4 +63,20 @@ h1:focus {
     .page {
         padding: 22px 2rem;
     }
+}
+
+/* inter-regular - latin */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''), url('./fonts/inter-v11-latin-regular.woff2') format('woff2');
+}
+
+/* inter-600 - latin */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    src: local(''), url('./fonts/inter-v11-latin-600.woff2') format('woff2');
 }

@@ -7,7 +7,7 @@ nav {
 .overlay {
     display: none;
     opacity: 0;
-    animation: fade-in 0.3s cubic-bezier(.4,0,.2,1) 0.2s;
+    animation: fade-in 0.3s cubic-bezier(.4,0,.2,1) 0.15s;
     animation-fill-mode: forwards;
 }
 
@@ -22,7 +22,7 @@ nav {
 
 .sidebar-expanded nav {
     margin-left: 0;
-    transition-delay: 0.2s;
+    transition-delay: 0.15s;
 }
 
 .sidebar-expanded .overlay {

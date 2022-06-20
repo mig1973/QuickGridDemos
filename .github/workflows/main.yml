@@ -26,9 +26,9 @@ jobs:
       run: cd ${{ env.CLIENT_APP_ROOT }} && dotnet publish -c Release
 
     - name: Rewrite base href
-      uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
+      uses: SteveSandersonMS/ghaction-rewrite-base-href@v1.1.0
       with:
-        html_path: ${{ env.PUBLISH_DIR }}/index.html
+        html_glob: ${{ env.PUBLISH_DIR }}/**/*.html
         base_href: /QuickGridDemos/
 
     - name: GitHub Pages

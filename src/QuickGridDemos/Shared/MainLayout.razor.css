@@ -7,8 +7,6 @@ nav {
 .overlay {
     display: none;
     opacity: 0;
-    animation: fade-in 0.3s cubic-bezier(.4,0,.2,1) 0.15s;
-    animation-fill-mode: forwards;
 }
 
 @keyframes fade-in {
@@ -22,21 +20,20 @@ nav {
 
 .sidebar-expanded nav {
     margin-left: 0;
-    transition-delay: 0.15s;
 }
 
 .sidebar-expanded .overlay {
     display: block;
+    opacity: 0.6;
 }
 
-.hamburger .handle {
-    transition: transform 0.2s cubic-bezier(.4,0,.2,1);
+.hamburger:hover .handle, .hamburger:active .handle {
+    background-color: white;
 }
 
-.hamburger:active .handle {
-    transform: scale(0.85);
-    transition-duration: 0.05s;
-}
+    .hamburger:hover .line, .hamburger:active .line {
+        background-color: black;
+    }
 
 @media (min-width: 768px) {
     nav {

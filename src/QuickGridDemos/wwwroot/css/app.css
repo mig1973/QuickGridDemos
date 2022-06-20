@@ -50,3 +50,7 @@ h1:focus {
 #app {
     display: flex;
 }
+
+.page {
+    padding: 12px 16px;
+}

@@ -7,7 +7,7 @@ nav {
 .overlay {
     display: none;
     opacity: 0;
-    transition: opacity 0.2s ease-out;
+    transition: opacity 0.6s ease-in-out;
 }
 
 .sidebar-expanded nav {
@@ -18,6 +18,14 @@ nav {
     display: block;
     opacity: 0.4;
 }
+
+.hamburger:hover, .hamburger:active {
+    background-color: white;
+}
+
+    .hamburger:hover .line, .hamburger:active .line {
+        background-color: black;
+    }
 
 @media (min-width: 768px) {
     nav {

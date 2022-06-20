@@ -1,0 +1,13 @@
+﻿@page "/counter"
+
+<PageTitle>Counter</PageTitle>
+
+<p>This is just a counter.</p>
+
+<p>Count: @count</p>
+
+<button @onclick="@(() => count++)">Increment</button>
+
+@code {
+    int count;
+}

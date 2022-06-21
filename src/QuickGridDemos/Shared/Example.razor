@@ -81,6 +81,11 @@ else
             return "Sample";
         }
 
+        if (tabName.EndsWith(".cs"))
+        {
+            return "C#";
+        }
+
         if (tabName.EndsWith(".razor"))
         {
             return "Razor";
@@ -96,9 +101,14 @@ else
 
     static string TabLanguageClass(string tabName)
     {
+        if (tabName.EndsWith(".cs"))
+        {
+            return "language-csharp";
+        }
+
         if (tabName.EndsWith(".razor"))
         {
-            return "language-csharp"; // TODO: Install Razor support
+            return "language-cshtml-razor";
         }
 
         if (tabName.EndsWith(".css"))

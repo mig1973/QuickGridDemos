@@ -57,12 +57,12 @@ h1:focus {
 }
 
 .page {
-    padding: 1.5rem 16px;
+    padding: 1.5rem 1.5rem;
 }
 
 @media (min-width: 768px) {
     .page {
-        padding: 1rem 3rem;
+        padding: 1.5rem 2.5rem;
     }
 }
 

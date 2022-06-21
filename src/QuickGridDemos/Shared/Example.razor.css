@@ -1,0 +1,23 @@
+.tabs {
+    border-bottom: 1px solid #ccc;
+}
+
+button {
+    padding: .5rem 1rem 0.25rem 1rem;
+    color: rgb(107 114 128);
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+    button:hover {
+        background-color: rgb(209 213 219);
+    }
+
+    button:active {
+        background-color: rgb(156 163 175);
+    }
+
+    button.current {
+        color: rgb(66 104 213);
+        background: rgb(222 222 222);
+    }

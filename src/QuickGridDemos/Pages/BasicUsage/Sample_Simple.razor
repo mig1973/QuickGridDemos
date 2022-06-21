@@ -1,25 +1,9 @@
-﻿@page "/basics"
-@using Microsoft.AspNetCore.Components.QuickGrid
-
-<PageTitle>Basic usage</PageTitle>
-
-<div class="page">
-    <h1 class="text-2xl font-bold mb-3">Basic usage</h1>
-
-    <Example Component="@typeof(Sample_Simple)" Sources="@(new[] { "Sample_Simple.razor.css" })" />
-
-    <h1 class="text-2xl font-bold my-3">More options</h1>
-
-    <QuickGrid Items="@_people.AsQueryable()" Pagination="@pagination" ResizableColumns="true">
-        <PropertyColumn Property="@(x => x.Name)" Sortable="true" />
-        <PropertyColumn Property="@(x => x.Age)" Sortable="true" />
-    </QuickGrid>
-    <Paginator Value="@pagination" />
-</div>
+﻿<QuickGrid Items="@_people.AsQueryable()">
+    <PropertyColumn Property="@(x => x.Name)" />
+    <PropertyColumn Property="@(x => x.Age)" />
+</QuickGrid>
 
 @code {
-    PaginationState pagination = new();
-
     public class Person
     {
         public string Name { get; set; }

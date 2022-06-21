@@ -1,0 +1,65 @@
+﻿<div class="tabs flex gap-2 font-bold text-sm mb-4 px-2">
+    @foreach (var tabName in GetAllTabNames())
+    {
+        <button class="@TabClass(tabName)" @onclick="@(() => SetTab(tabName))">
+            @TabDisplayName(tabName)
+        </button>
+    }
+</div>
+
+@if (_currentTab == SampleTabName)
+{
+    <DynamicComponent Type="Component" />
+}
+else
+{
+    <div>Would display sources for @_currentTab</div>
+}
+
+@code {
+    private const string SampleTabName = "sample";
+    private string _currentTab = SampleTabName;
+
+    [Parameter, EditorRequired] public Type Component { get; set; } = default!;
+    [Parameter] public string[]? Sources { get; set; }
+
+    IEnumerable<string> GetAllTabNames()
+    {
+        yield return SampleTabName;
+        yield return $"{Component.Name}.razor";
+        foreach (var source in Sources ?? Enumerable.Empty<string>())
+        {
+            yield return source;
+        }
+    }
+
+    void SetTab(string tabName)
+    {
+        _currentTab = tabName;
+    }
+
+    string TabClass(string tabName)
+    {
+        return _currentTab == tabName ? "current" : string.Empty;
+    }
+
+    string TabDisplayName(string tabName)
+    {
+        if (tabName == SampleTabName)
+        {
+            return "Sample";
+        }
+
+        if (tabName.EndsWith(".razor"))
+        {
+            return "Razor";
+        }
+
+        if (tabName.EndsWith(".css"))
+        {
+            return "CSS";
+        }
+
+        return tabName;
+    }
+}

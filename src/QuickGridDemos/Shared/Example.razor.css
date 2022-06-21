@@ -27,8 +27,11 @@ button {
     background-color: white;
     padding: 1rem;
     overflow: auto;
-    white-space: pre;
-    font-family: monospace;
     width: 0;
     min-width: 100%;
+}
+
+.hljs {
+    padding: 0 0 !important;
+    background: none !important;
 }

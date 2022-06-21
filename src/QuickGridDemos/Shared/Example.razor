@@ -1,4 +1,5 @@
 ﻿@inject HttpClient Http
+@inject IJSRuntime JS
 
 <div class="tabs flex gap-2 font-bold text-sm px-2">
     @foreach (var tabName in GetAllTabNames())
@@ -17,8 +18,10 @@
 }
 else
 {
-    <div @key="@_currentTab" class="source">
-        @_currentTabSourceCode
+    <div @key="@_currentTab" class="source text-sm">
+        <pre>
+            <code @ref="codeElement" class="@TabLanguageClass(_currentTab)">@_currentTabSourceCode</code>
+        </pre>
     </div>
 }
 
@@ -26,9 +29,20 @@ else
     private const string SampleTabName = "sample";
     private string _currentTab = SampleTabName;
     private string? _currentTabSourceCode;
+    private ElementReference codeElement;
+    private bool _shouldRunSyntaxHighlighter;
 
     [Parameter, EditorRequired] public Type Component { get; set; } = default!;
     [Parameter] public string[]? Sources { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (_shouldRunSyntaxHighlighter && _currentTab != SampleTabName)
+        {
+            _shouldRunSyntaxHighlighter = false;
+            await JS.InvokeVoidAsync("hljs.highlightElement", codeElement);
+        }
+    }
 
     IEnumerable<string> GetAllTabNames()
     {
@@ -50,6 +64,7 @@ else
             if (_currentTab != SampleTabName)
             {
                 _currentTabSourceCode = await Http.GetStringAsync($"sample_sources/{tabName}.txt");
+                _shouldRunSyntaxHighlighter = true;
             }
         }
     }
@@ -59,7 +74,7 @@ else
         return _currentTab == tabName ? "current" : string.Empty;
     }
 
-    string TabDisplayName(string tabName)
+    static string TabDisplayName(string tabName)
     {
         if (tabName == SampleTabName)
         {
@@ -77,5 +92,20 @@ else
         }
 
         return tabName;
+    }
+
+    static string TabLanguageClass(string tabName)
+    {
+        if (tabName.EndsWith(".razor"))
+        {
+            return "language-csharp"; // TODO: Install Razor support
+        }
+
+        if (tabName.EndsWith(".css"))
+        {
+            return "language-css";
+        }
+
+        return null;
     }
 }

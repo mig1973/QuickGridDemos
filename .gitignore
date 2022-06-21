@@ -5,3 +5,4 @@ obj/
 *.suo
 .tailwind/
 app.out.css
+sample_sources/

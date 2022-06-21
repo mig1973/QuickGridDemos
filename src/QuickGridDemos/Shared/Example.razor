@@ -1,7 +1,9 @@
-﻿<div class="tabs flex gap-2 font-bold text-sm mb-4 px-2">
+﻿@inject HttpClient Http
+
+<div class="tabs flex gap-2 font-bold text-sm px-2">
     @foreach (var tabName in GetAllTabNames())
     {
-        <button class="@TabClass(tabName)" @onclick="@(() => SetTab(tabName))">
+        <button class="@TabClass(tabName)" @onclick="@(() => SetTabAsync(tabName))">
             @TabDisplayName(tabName)
         </button>
     }
@@ -9,16 +11,21 @@
 
 @if (_currentTab == SampleTabName)
 {
-    <DynamicComponent Type="Component" />
+    <div class="mt-4">
+        <DynamicComponent Type="Component" />
+    </div>
 }
 else
 {
-    <div>Would display sources for @_currentTab</div>
+    <div class="source">
+        @_currentTabSourceCode
+    </div>
 }
 
 @code {
     private const string SampleTabName = "sample";
     private string _currentTab = SampleTabName;
+    private string? _currentTabSourceCode;
 
     [Parameter, EditorRequired] public Type Component { get; set; } = default!;
     [Parameter] public string[]? Sources { get; set; }
@@ -33,9 +40,15 @@ else
         }
     }
 
-    void SetTab(string tabName)
+    async Task SetTabAsync(string tabName)
     {
         _currentTab = tabName;
+        _currentTabSourceCode = null;
+
+        if (_currentTab != SampleTabName)
+        {
+            _currentTabSourceCode = await Http.GetStringAsync($"sample_sources/{tabName}.txt");
+        }
     }
 
     string TabClass(string tabName)

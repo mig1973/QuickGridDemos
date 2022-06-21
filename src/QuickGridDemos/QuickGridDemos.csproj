@@ -21,8 +21,7 @@
 	</ItemGroup>
 
 	<Target Name="TailwindBuild" BeforeTargets="CoreBuild" DependsOnTargets="GetTailwindToolingInputs; AcquireTailwindTooling">
-		<Exec WorkingDirectory="$(MSBuildThisFileDirectory)"
-			  Command="$(TailwindExePath) -i wwwroot/css/app.css -o wwwroot/css/app.out.css" />
+		<Exec WorkingDirectory="$(MSBuildThisFileDirectory)" Command="$(TailwindExePath) -i wwwroot/css/app.css -o wwwroot/css/app.out.css" />
 	</Target>
 
 	<Target Name="AcquireTailwindTooling" DependsOnTargets="GetTailwindToolingInputs" Condition="!Exists('$(TailwindExePath)')">
@@ -38,6 +37,13 @@
 			<TailwindExeDir>$([System.IO.Path]::Combine($(MSBuildThisFileDirectory), ".tailwind"))</TailwindExeDir>
 			<TailwindExePath>$([System.IO.Path]::Combine($(TailwindExeDir), $(TailwindExeName)))</TailwindExePath>
 		</PropertyGroup>
+	</Target>
+
+	<Target Name="CopySampleSourcesToContentRoot" BeforeTargets="CoreBuild">
+		<ItemGroup>
+			<SampleSource Include="Pages\**\Sample_*.*" />
+		</ItemGroup>
+		<Copy SourceFiles="@(SampleSource)" DestinationFiles="@(SampleSource->'wwwroot\sample_sources\%(Filename)%(Extension).txt')" SkipUnchangedFiles="true" />
 	</Target>
 
 </Project>

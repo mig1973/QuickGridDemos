@@ -3,7 +3,7 @@
 <div class="tabs flex gap-2 font-bold text-sm px-2">
     @foreach (var tabName in GetAllTabNames())
     {
-        <button class="@TabClass(tabName)" @onclick="@(() => SetTabAsync(tabName))">
+        <button @key="@tabName" class="@TabClass(tabName)" @onclick="@(() => SetTabAsync(tabName))">
             @TabDisplayName(tabName)
         </button>
     }
@@ -17,7 +17,7 @@
 }
 else
 {
-    <div class="source">
+    <div @key="@_currentTab" class="source">
         @_currentTabSourceCode
     </div>
 }

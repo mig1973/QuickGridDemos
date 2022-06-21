@@ -1,0 +1,127 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no"/>
+    <meta name="description" content="Samples using the QuickGrid component for Blazor."/>
+    <base href="/QuickGridDemos/"/>
+    <link href="css/app.out.css" rel="stylesheet"/>
+    <link href="QuickGridDemos.styles.css" rel="stylesheet"/>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"/>
+
+<!-- %%-PRERENDERING-HEADOUTLET-BEGIN-%% -->
+<title>Basic usage</title>
+<!-- %%-PRERENDERING-HEADOUTLET-END-%% -->
+<script src="data:text/javascript;base64,KGZ1bmN0aW9uKG4sdCxpKXtmb3IodmFyIGY9bi5jcmVhdGVOb2RlSXRlcmF0b3IobiwxMjgpLHIsZSx1O2YubmV4dE5vZGUoKTspaWYocj1mLnJlZmVyZW5jZU5vZGUsdC50ZXN0KHIudGV4dENvbnRlbnQudHJpbSgpKSl7d2hpbGUoaT1yLm5leHRTaWJsaW5nKWlmKGU9aS50ZXh0Q29udGVudC50cmltKCksaS5yZW1vdmUoKSx0LnRlc3QoZSkpYnJlYWs7ci5yZW1vdmUoKTticmVha311PUFycmF5LmZyb20obi5xdWVyeVNlbGVjdG9yQWxsKCJzY3JpcHQiKSkucG9wKCk7dSYmdS5yZW1vdmUoKX0pKGRvY3VtZW50LC9eJSUtUFJFUkVOREVSSU5HLUhFQURPVVRMRVQtKEJFR0lOfEVORCktJSUkLyk7"></script></head>
+
+<body>
+    <div id="app">
+<!-- %%-PRERENDERING-BEGIN-%% -->
+<div class="" b-x5g2w4pwcu><div class="overlay bg-black fixed top-0 bottom-0 left-0 right-0 z-10" b-x5g2w4pwcu></div>
+
+    
+    <nav class="fixed flex flex-col h-screen bg-gray-800 text-white w-64 overflow-y-auto z-10 drop-shadow-2xl" b-x5g2w4pwcu><div class="h-16 flex items-center px-6 text-lg bg-gray-900" b-psiykwyuwh><span class="font-bold" b-psiykwyuwh>QuickGrid</span>
+    &nbsp;for Blazor
+</div>
+<div class="px-2 py-2 text-gray-300" b-psiykwyuwh><a href="." class="nav-link main-link"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" b-psiykwyuwh><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" b-psiykwyuwh></path></svg>
+        Introduction
+    </a>
+    <a href="getstarted" class="nav-link main-link"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" b-psiykwyuwh><path stroke-linecap="round" stroke-linejoin="round" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" b-psiykwyuwh></path></svg>
+        Get started
+    </a>
+    <a class="nav-link main-link" href="https://github.com/aspnet/AspLabs/tree/main/src/QuickGrid" b-psiykwyuwh><svg width="24" height="24" fill="currentColor" class="mr-3 text-opacity-50 transform" b-psiykwyuwh><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.463 2 11.97c0 4.404 2.865 8.14 6.839 9.458.5.092.682-.216.682-.48 0-.236-.008-.864-.013-1.695-2.782.602-3.369-1.337-3.369-1.337-.454-1.151-1.11-1.458-1.11-1.458-.908-.618.069-.606.069-.606 1.003.07 1.531 1.027 1.531 1.027.892 1.524 2.341 1.084 2.91.828.092-.643.35-1.083.636-1.332-2.22-.251-4.555-1.107-4.555-4.927 0-1.088.39-1.979 1.029-2.675-.103-.252-.446-1.266.098-2.638 0 0 .84-.268 2.75 1.022A9.606 9.606 0 0112 6.82c.85.004 1.705.114 2.504.336 1.909-1.29 2.747-1.022 2.747-1.022.546 1.372.202 2.386.1 2.638.64.696 1.028 1.587 1.028 2.675 0 3.83-2.339 4.673-4.566 4.92.359.307.678.915.678 1.846 0 1.332-.012 2.407-.012 2.734 0 .267.18.577.688.48C19.137 20.107 22 16.373 22 11.969 22 6.463 17.522 2 12 2z" b-psiykwyuwh></path></svg>
+        Source code
+    </a></div>
+<h2 class="subheading px-8 pt-6 uppercase text-sm opacity-75" b-psiykwyuwh>Samples</h2>
+<div class="p-4 py-2 text-sm text-gray-300" b-psiykwyuwh><a href="basics" class="nav-link active"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" b-psiykwyuwh><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" b-psiykwyuwh></path></svg>
+        Typical usage
+    </a>
+    <a href="not-implemented" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" b-psiykwyuwh><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" b-psiykwyuwh></path></svg>
+        Data sources
+    </a>
+    <a href="not-implemented" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" b-psiykwyuwh><path stroke-linecap="round" stroke-linejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" b-psiykwyuwh></path></svg>
+        Columns
+    </a>
+    <a href="not-implemented" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" b-psiykwyuwh><path stroke-linecap="round" stroke-linejoin="round" d="M3 4h13M3 8h9m-9 4h9m5-4v12m0 0l-4-4m4 4l4-4" b-psiykwyuwh></path></svg>
+        Sorting
+    </a>
+    <a href="not-implemented" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" b-psiykwyuwh><path stroke-linecap="round" stroke-linejoin="round" d="M10 21h7a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v11m0 5l4.879-4.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242z" b-psiykwyuwh></path></svg>
+        Filtering
+    </a>
+    <a href="not-implemented" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" b-psiykwyuwh><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" b-psiykwyuwh></path></svg>
+        Paging
+    </a>
+    <a href="not-implemented" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" b-psiykwyuwh><path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" b-psiykwyuwh></path></svg>
+        Virtualization
+    </a>
+    <a href="not-implemented" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" b-psiykwyuwh><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" b-psiykwyuwh></path></svg>
+        Appearance
+    </a></div></nav></div>
+
+<div class="md:ml-64 mt-16 md:mt-0 flex-shrink flex-grow z-0 " b-x5g2w4pwcu><div class="bg-gray-800 top-0 fixed w-full md:hidden h-16 flex items-center px-4 text-white text-lg z-10" b-x5g2w4pwcu><button title="Show navigation menu" class="hamburger mr-2 p-3 -m-3" b-x5g2w4pwcu><div class="handle rounded-lg bg-slate-600 p-2" b-x5g2w4pwcu><div class="space-y-1 opacity-75" b-x5g2w4pwcu><div class="line w-6 h-1 bg-white" b-x5g2w4pwcu></div>
+                  <div class="line w-6 h-1 bg-white" b-x5g2w4pwcu></div>
+                  <div class="line w-6 h-1 bg-white" b-x5g2w4pwcu></div></div></div></button>
+        <span class="font-bold" b-x5g2w4pwcu>QuickGrid</span>&nbsp;for Blazor
+    </div>
+
+    
+
+<div class="page"><h1 class="text-2xl font-bold mb-3">Basic usage</h1>
+
+    <div class="tabs flex gap-2 font-bold text-sm px-2" b-pejiuass82><button class="current" b-pejiuass82>Sample</button><button class="" b-pejiuass82>Razor</button><button class="" b-pejiuass82>CSS</button></div><div class="mt-4" b-pejiuass82>
+    
+    <table class="quickgrid  " theme="default" aria-rowcount="16" b-vznuo5fmpv><thead b-vznuo5fmpv><tr b-vznuo5fmpv><th aria-sort="none" scope="col" b-vznuo5fmpv><div class="col-header-content" b-vznuo5fmpv><div class="col-title" b-b7yucal7gj><div class="col-title-text" b-b7yucal7gj>Name</div></div></div></th><th aria-sort="none" scope="col" b-vznuo5fmpv><div class="col-header-content" b-vznuo5fmpv><div class="col-title" b-b7yucal7gj><div class="col-title-text" b-b7yucal7gj>Age</div></div></div></th></tr></thead>
+            <tbody b-vznuo5fmpv><tr aria-rowindex="2" b-vznuo5fmpv><td b-vznuo5fmpv>Abc</td><td b-vznuo5fmpv>123</td></tr><tr aria-rowindex="3" b-vznuo5fmpv><td b-vznuo5fmpv>Def</td><td b-vznuo5fmpv>456</td></tr><tr aria-rowindex="4" b-vznuo5fmpv><td b-vznuo5fmpv>Ghi</td><td b-vznuo5fmpv>789</td></tr><tr aria-rowindex="5" b-vznuo5fmpv><td b-vznuo5fmpv>Abc</td><td b-vznuo5fmpv>123</td></tr><tr aria-rowindex="6" b-vznuo5fmpv><td b-vznuo5fmpv>Def</td><td b-vznuo5fmpv>456</td></tr><tr aria-rowindex="7" b-vznuo5fmpv><td b-vznuo5fmpv>Ghi</td><td b-vznuo5fmpv>789</td></tr><tr aria-rowindex="8" b-vznuo5fmpv><td b-vznuo5fmpv>Abc</td><td b-vznuo5fmpv>123</td></tr><tr aria-rowindex="9" b-vznuo5fmpv><td b-vznuo5fmpv>Def</td><td b-vznuo5fmpv>456</td></tr><tr aria-rowindex="10" b-vznuo5fmpv><td b-vznuo5fmpv>Ghi</td><td b-vznuo5fmpv>789</td></tr><tr aria-rowindex="11" b-vznuo5fmpv><td b-vznuo5fmpv>Abc</td><td b-vznuo5fmpv>123</td></tr><tr aria-rowindex="12" b-vznuo5fmpv><td b-vznuo5fmpv>Def</td><td b-vznuo5fmpv>456</td></tr><tr aria-rowindex="13" b-vznuo5fmpv><td b-vznuo5fmpv>Ghi</td><td b-vznuo5fmpv>789</td></tr><tr aria-rowindex="14" b-vznuo5fmpv><td b-vznuo5fmpv>Abc</td><td b-vznuo5fmpv>123</td></tr><tr aria-rowindex="15" b-vznuo5fmpv><td b-vznuo5fmpv>Def</td><td b-vznuo5fmpv>456</td></tr><tr aria-rowindex="16" b-vznuo5fmpv><td b-vznuo5fmpv>Ghi</td><td b-vznuo5fmpv>789</td></tr></tbody></table></div>
+
+    <h1 class="text-2xl font-bold my-3">More options</h1>
+
+    
+        
+    <table class="quickgrid  " theme="default" aria-rowcount="11" b-vznuo5fmpv><thead b-vznuo5fmpv><tr b-vznuo5fmpv><th aria-sort="none" scope="col" b-vznuo5fmpv><div class="col-header-content" b-vznuo5fmpv><button class="col-title" b-b7yucal7gj><div class="col-title-text" b-b7yucal7gj>Name</div>
+                    <div class="sort-indicator" aria-hidden="true" b-b7yucal7gj></div></button></div><div class="col-width-draghandle" b-vznuo5fmpv></div></th><th aria-sort="none" scope="col" b-vznuo5fmpv><div class="col-header-content" b-vznuo5fmpv><button class="col-title" b-b7yucal7gj><div class="col-title-text" b-b7yucal7gj>Age</div>
+                    <div class="sort-indicator" aria-hidden="true" b-b7yucal7gj></div></button></div><div class="col-width-draghandle" b-vznuo5fmpv></div></th></tr></thead>
+            <tbody b-vznuo5fmpv><tr aria-rowindex="2" b-vznuo5fmpv><td b-vznuo5fmpv>Abc</td><td b-vznuo5fmpv>123</td></tr><tr aria-rowindex="3" b-vznuo5fmpv><td b-vznuo5fmpv>Def</td><td b-vznuo5fmpv>456</td></tr><tr aria-rowindex="4" b-vznuo5fmpv><td b-vznuo5fmpv>Ghi</td><td b-vznuo5fmpv>789</td></tr><tr aria-rowindex="5" b-vznuo5fmpv><td b-vznuo5fmpv>Abc</td><td b-vznuo5fmpv>123</td></tr><tr aria-rowindex="6" b-vznuo5fmpv><td b-vznuo5fmpv>Def</td><td b-vznuo5fmpv>456</td></tr><tr aria-rowindex="7" b-vznuo5fmpv><td b-vznuo5fmpv>Ghi</td><td b-vznuo5fmpv>789</td></tr><tr aria-rowindex="8" b-vznuo5fmpv><td b-vznuo5fmpv>Abc</td><td b-vznuo5fmpv>123</td></tr><tr aria-rowindex="9" b-vznuo5fmpv><td b-vznuo5fmpv>Def</td><td b-vznuo5fmpv>456</td></tr><tr aria-rowindex="10" b-vznuo5fmpv><td b-vznuo5fmpv>Ghi</td><td b-vznuo5fmpv>789</td></tr><tr aria-rowindex="11" b-vznuo5fmpv><td b-vznuo5fmpv>Abc</td><td b-vznuo5fmpv>123</td></tr></tbody></table>
+    <div class="paginator" b-3qssc0bm46><div class="summary" b-3qssc0bm46><strong b-3qssc0bm46>15</strong> items</div>
+        <nav role="navigation" b-3qssc0bm46><button class="go-first" disabled title="Go to first page" aria-title="Go to first page" b-3qssc0bm46></button>
+            <button class="go-previous" disabled title="Go to previous page" aria-title="Go to previous page" b-3qssc0bm46></button>
+            <div b-3qssc0bm46>
+                Page <strong b-3qssc0bm46>1</strong>
+                of <strong b-3qssc0bm46>2</strong></div>
+            <button class="go-next" title="Go to next page" aria-title="Go to next page" b-3qssc0bm46></button>
+            <button class="go-last" title="Go to last page" aria-title="Go to last page" b-3qssc0bm46></button></nav></div></div></div>
+        
+<!-- %%-PRERENDERING-END-%% -->
+</div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="." class="reload">Reload</a>
+        <a href="." class="dismiss">🗙</a>
+    </div>
+
+    <script src="_framework/blazor.webassembly.js" autostart="false"></script>
+    <script src="highlight.min.js"></script>
+    <script type="module">
+        import { BrotliDecode } from './decode.min.js';
+        Blazor.start({
+            loadBootResource: function (type, name, defaultUri, integrity) {
+                // For framework resources, use the precompressed .br files for faster downloads
+                // This is needed only because GitHub pages doesn't natively support Brotli (or even gzip for .dll files)
+                if (type !== 'dotnetjs' && location.hostname !== 'localhost') {
+                    return (async function () {
+                        const response = await fetch(defaultUri + '.br', { cache: 'no-cache' });
+                        if (!response.ok) {
+                            throw new Error(response.statusText);
+                        }
+                        const originalResponseBuffer = await response.arrayBuffer();
+                        const originalResponseArray = new Int8Array(originalResponseBuffer);
+                        const decompressedResponseArray = BrotliDecode(originalResponseArray);
+                        const contentType = type === 'dotnetwasm' ? 'application/wasm' : 'application/octet-stream';
+                        return new Response(decompressedResponseArray, { headers: { 'content-type': contentType } });
+                    })();
+                }
+            }
+        });
+    </script>
+
+
+
+</body></html>

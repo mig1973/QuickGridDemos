@@ -1,0 +1,31 @@
+﻿<QuickGrid Items="@_people.AsQueryable()">
+    <PropertyColumn Property="@(x => x.Name)" />
+    <PropertyColumn Property="@(x => x.Age)" />
+</QuickGrid>
+
+@code {
+    public class Person
+    {
+        public string? Name { get; set; }
+        public int Age { get; set; }
+    }
+
+    public Person[] _people = new Person[]
+    {
+        new Person { Name = "Abc", Age = 123 },
+        new Person { Name = "Def", Age = 456 },
+        new Person { Name = "Ghi", Age = 789 },
+        new Person { Name = "Abc", Age = 123 },
+        new Person { Name = "Def", Age = 456 },
+        new Person { Name = "Ghi", Age = 789 },
+        new Person { Name = "Abc", Age = 123 },
+        new Person { Name = "Def", Age = 456 },
+        new Person { Name = "Ghi", Age = 789 },
+        new Person { Name = "Abc", Age = 123 },
+        new Person { Name = "Def", Age = 456 },
+        new Person { Name = "Ghi", Age = 789 },
+        new Person { Name = "Abc", Age = 123 },
+        new Person { Name = "Def", Age = 456 },
+        new Person { Name = "Ghi", Age = 789 },
+    };
+}

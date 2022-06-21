@@ -42,12 +42,15 @@ else
 
     async Task SetTabAsync(string tabName)
     {
-        _currentTab = tabName;
-        _currentTabSourceCode = null;
-
-        if (_currentTab != SampleTabName)
+        if (_currentTab != tabName)
         {
-            _currentTabSourceCode = await Http.GetStringAsync($"sample_sources/{tabName}.txt");
+            _currentTab = tabName;
+            _currentTabSourceCode = null;
+
+            if (_currentTab != SampleTabName)
+            {
+                _currentTabSourceCode = await Http.GetStringAsync($"sample_sources/{tabName}.txt");
+            }
         }
     }
 

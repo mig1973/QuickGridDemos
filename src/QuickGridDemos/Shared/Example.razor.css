@@ -35,3 +35,7 @@ button {
     padding: 0 0 !important;
     background: none !important;
 }
+
+code {
+    font-family: 'SF Mono', Consolas, monospace;
+}

@@ -9,15 +9,15 @@
 }
 
     ::deep .nav-link:hover {
-        background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+        background-color: rgb(58 65 76);
         color: white;
     }
 
-    ::deep .nav-link:active {
+    ::deep .nav-link:active, ::deep .nav-link.active:active {
         transform: scale(0.95);
         transition-duration: 0.05s;
         transition-timing-function: cubic-bezier(.06,.89,.57,1.04);
-        background-color: #ffffff66;
+        background-color: #ffffff46;
     }
 
 ::deep .main-link {
@@ -27,7 +27,7 @@
 
 ::deep .nav-link.active {
     color: #f6fdca;
-    background-color: #ffffff38;
+    background-color: #ffffff26;
 }
 
 .subheading {

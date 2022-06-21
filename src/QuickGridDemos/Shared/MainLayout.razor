@@ -2,13 +2,17 @@
 @inject NavigationManager Nav
 
 <div class="@SidebarClass">
+    <!-- Shadow covering rest of page -->
     <div @onclick="@(() => { sidebarExpanded = false; })" class="overlay bg-black fixed top-0 bottom-0 left-0 right-0 z-10"></div>
-    <nav class="fixed flex flex-col h-screen bg-slate-700 text-white w-64 overflow-y-auto z-10 drop-shadow-2xl">
+
+    <!-- Sidebar -->
+    <nav class="fixed flex flex-col h-screen bg-gray-800 text-white w-64 overflow-y-auto z-10 drop-shadow-2xl">
         <NavMenu />
     </nav>
 </div>
 
 <div class="md:ml-64 mt-16 md:mt-0 flex-shrink z-0 @SidebarClass">
+    <!-- Title bar with hamburger button - visible only on mobile -->
     <div class="bg-slate-100 top-0 fixed w-full md:hidden h-16 flex items-center px-4 bg-slate-500 text-white text-lg">
         <button title="Show navigation menu" @onclick="@(() => { sidebarExpanded = true; })" class="hamburger mr-2 p-3 -m-3">
             <div class="handle rounded-lg bg-slate-700 p-2">
